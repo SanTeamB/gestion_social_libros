@@ -1,0 +1,137 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="gestion_social_libros.usuario">
+      <field name="name">Lista de usuarios</field>
+      <field name="model">gestion_social_libros.usuario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="correo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_social_libros.libro">
+      <field name="name">Lista de libros</field>
+      <field name="model">gestion_social_libros.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="titulo"/>
+          <field name="numPags"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_social_libros.comentario">
+      <field name="name">Lista de comentarios</field>
+      <field name="model">gestion_social_libros.comentario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="contenido"/>
+          <field name="pagina"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_social_libros.calificacion">
+      <field name="name">Lista de calificaciones</field>
+      <field name="model">gestion_social_libros.calificacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="valor"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gestion_social_libros.estado">
+      <field name="name">Lista de estados</field>
+      <field name="model">gestion_social_libros.estado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="estado"/>
+          <field name="usuario"/>
+          <field name="libro"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="gestion_social_libros.usuario_action_window">
+      <field name="name">Listado de usuarios</field>
+      <field name="res_model">gestion_social_libros.usuario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_social_libros.libro_action_window">
+      <field name="name">Listado de libros</field>
+      <field name="res_model">gestion_social_libros.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_social_libros.comentario_action_window">
+      <field name="name">Listado de comentarios</field>
+      <field name="res_model">gestion_social_libros.comentario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_social_libros.calificacion_action_window">
+      <field name="name">Listado de calificaciones</field>
+      <field name="res_model">gestion_social_libros.calificacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_social_libros.estado_action_window">
+      <field name="name">Listado de estados</field>
+      <field name="res_model">gestion_social_libros.estado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="gestion_social_libros.action_server">
+      <field name="name">gestion_social_libros server</field>
+      <field name="model_id" ref="model_gestion_social_libros_gestion_social_libros"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Gestion Social Libros" id="gestion_social_libros.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Gestion de Usuarios" id="gestion_social_libros.menu_1" parent="gestion_social_libros.menu_root"/>
+    <menuitem name="Gestion de Libros" id="gestion_social_libros.menu_2" parent="gestion_social_libros.menu_root"/>
+    <menuitem name="Gestion de Comentarios" id="gestion_social_libros.menu_3" parent="gestion_social_libros.menu_root"/>
+    <menuitem name="Gestion de Calificaciones" id="gestion_social_libros.menu_4" parent="gestion_social_libros.menu_root"/>
+    <menuitem name="Gestion de Estados" id="gestion_social_libros.menu_5" parent="gestion_social_libros.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Listado de usuarios" id="gestion_social_libros.menu_1_list" parent="gestion_social_libros.menu_1"
+              action="gestion_social_libros.usuario_action_window"/>
+    <menuitem name="Listado de libros" id="gestion_social_libros.menu_2_list" parent="gestion_social_libros.menu_2"
+              action="gestion_social_libros.libro_action_window"/>
+    <menuitem name="Listado de Comentarios" id="gestion_social_libros.menu_3_list" parent="gestion_social_libros.menu_3"
+              action="gestion_social_libros.comentario_action_window"/>
+    <menuitem name="Listado de Calificaciones" id="gestion_social_libros.menu_4_list" parent="gestion_social_libros.menu_4"
+              action="gestion_social_libros.calificacion_action_window"/>
+    <menuitem name="Listado de Estados" id="gestion_social_libros.menu_5_list" parent="gestion_social_libros.menu_5"
+              action="gestion_social_libros.estado_action_window"/>
+  </data>
+</odoo>

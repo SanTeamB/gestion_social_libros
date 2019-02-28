@@ -1,0 +1,105 @@
+<odoo>
+    <data>
+           <record id="l1" model="gestion_social_libros.libro">
+             <field name="name">L1</field>
+             <field name="titulo">El nombre del viento</field>
+             <field name="numPags">869</field>
+           </record>
+
+           <record id="l2" model="gestion_social_libros.libro">
+             <field name="name">L2</field>
+             <field name="titulo">El temor de un hombre sabio</field>
+             <field name="numPags">1027</field>
+           </record>
+
+           <record id="l3" model="gestion_social_libros.libro">
+             <field name="name">L3</field>
+             <field name="titulo">Memorias de Idhún</field>
+             <field name="numPags">645</field>
+           </record>
+
+           <record id="u1" model="gestion_social_libros.usuario">
+             <field name="name">disantilopez</field>
+             <field name="nombre">Santiago</field>
+             <field name="correo">santiagolopezolmos@gmail.com</field>
+           </record>
+
+           <record id="u2" model="gestion_social_libros.usuario">
+             <field name="name">jiannMinecraftero</field>
+             <field name="nombre">Jiann Pablo</field>
+             <field name="correo">jiann777@gmail.com</field>
+           </record>
+
+           <record id="u3" model="gestion_social_libros.usuario">
+             <field name="name">byalvare</field>
+             <field name="nombre">Álvaro</field>
+             <field name="correo">byalvare@gmail.com</field>
+           </record>
+
+           <record id="c1" model="gestion_social_libros.comentario">
+             <field name="name">C1</field>
+             <field name="contenido">Está pagina te deja con mucha intriga, espero que penseis lo mismo</field>
+             <field name="pagina">178</field>
+             <field name="libro" ref="l1"></field>
+             <field name = "usuario" ref="u1"></field>
+           </record>
+
+           <record id="c2" model="gestion_social_libros.comentario">
+             <field name="name">C2</field>
+             <field name="contenido">A ver cuando se pone interesante otra vez la historia</field>
+             <field name="pagina">368</field>
+             <field name="libro" ref="l1"></field>
+             <field name = "usuario" ref="u2"></field>
+           </record>
+
+           <record id="c3" model="gestion_social_libros.comentario">
+             <field name="name">C3</field>
+             <field name="contenido">Que buen comienzo de la historia</field>
+             <field name="pagina">48</field>
+             <field name="libro" ref="l3"></field>
+             <field name = "usuario" ref="u1"></field>
+           </record>
+
+           <record id="ca1" model="gestion_social_libros.calificacion">
+             <field name="name">CAL1</field>
+             <field name="valor">9</field>
+             <field name = "usuario" ref="u1"></field>
+             <field name="libro" ref="l1"></field>
+           </record>
+
+           <record id="ca2" model="gestion_social_libros.calificacion">
+             <field name="name">CAL2</field>
+             <field name="valor">7</field>
+             <field name = "usuario" ref="u3"></field>
+             <field name="libro" ref="l2"></field>
+           </record>
+
+           <record id="ca3" model="gestion_social_libros.calificacion">
+             <field name="name">CAL3</field>
+             <field name="valor">8</field>
+             <field name = "usuario" ref="u2"></field>
+             <field name="libro" ref="l3"></field>
+           </record>
+
+           <record id="e1" model="gestion_social_libros.estado">
+             <field name="name">E1</field>
+             <field name="estado">0</field>
+             <field name = "usuario" ref="u1"></field>
+             <field name="libro" ref="l1"></field>
+           </record>
+
+           <record id="e2" model="gestion_social_libros.estado">
+             <field name="name">E2</field>
+             <field name="estado">2</field>
+             <field name = "usuario" ref="u1"></field>
+             <field name="libro" ref="l2"></field>
+           </record>
+
+           <record id="e3" model="gestion_social_libros.estado">
+             <field name="name">E3</field>
+             <field name="estado">1</field>
+             <field name = "usuario" ref="u3"></field>
+             <field name="libro" ref="l2"></field>
+           </record>
+    </data>
+</odoo>
